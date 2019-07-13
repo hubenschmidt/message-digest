@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 
 const messageSchema = new Schema({
     _id: { 
-        type: Schema.Types.ObjectId,
-        required: true 
+        type: String
     },
-    message: { type: String },
-    // hash: { type: String }
+    _id_transaction: { 
+        type: Array 
+    },
+    message: { 
+        type: String 
+    },
 });
 
 const Message = mongoose.model('messages', messageSchema)

@@ -6,6 +6,9 @@ router
     .route('/')
     .post(serviceController.create)
 
-//matches with "/messages/<hash>"
+//matches with "/messages/:hash"
+router
+    .route('/:hash')
+    .get(serviceController.findOneByHash)
 
 module.exports = router
