@@ -6,8 +6,9 @@ const mongoose = require('mongoose');
 const PORT = process.env.POR || 8080;
 require('dotenv').config({ path: './.env' });
 
-//set mongoose to levergae built in JavaScript ES6 Promises
+//set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
+mongoose.set('useFindAndModify', false);
 
 const app = express();
 

@@ -5,7 +5,7 @@ const messageSchema = new Schema({
     _id: { 
         type: String
     },
-    _id_transaction: { 
+    _id_t: { 
         type: Array 
     },
     message: { 

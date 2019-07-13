@@ -39,27 +39,38 @@ module.exports = {
 
             m.Message.findById({_id: signature}, function (err, doc){
                 if(!doc){
-
                     let document = {
                         _id: signature,
-                        _id_transaction: _id_transaction,
+                        _id_t: _id_transaction,
                         message: message,
                     };
-
                     m.Message.create(document)
                         .then(doc => console.log(doc))
                         .catch(err => console.log(err))
-
-                    // m.Message.findOneAndUpdate(
-                    //     { _id: signature },
-                    //     {
-                    //         _id_transaction: id_transaction,
-                    //         message: message
-                    //     },
-                    //     { upsert: true},
-                    //     )
-                    //     .then(dbModel => console.log(dbModel))
                 }
+
+                m.Message.findOneAndUpdate(
+                    { _id: signature },
+                    {  $push: {
+                        _id_t: {
+                            $each: [_id_transaction]
+                        }
+                    }
+                }).then(dbModel => console.log(dbModel))
+                
+                // else if (doc) {
+                //        m.Message.findOneAndUpdate(
+                //         { _id: signature },
+                //         {
+                //             _id_transaction: id_transaction,
+                //             message: message
+                //         },
+                //         { upsert: true},
+                //         )
+                //         .then(dbModel => console.log(dbModel))
+
+                // }
+                
             })
                 // .then(dbModel
                     
