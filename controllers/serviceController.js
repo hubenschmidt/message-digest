@@ -41,7 +41,7 @@ function read(req, res) {
         'message -_id',
         function (err, doc) {
             if (!doc) {
-                res.status(404).json()
+                res.status(404).json({err_msg: 'Message Not Found'})
             } else {
                 res.json(doc);
             }
