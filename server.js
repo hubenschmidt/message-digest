@@ -3,8 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
 const mongoose = require('mongoose');
-const PORT = process.env.POR || 8080;
-require('dotenv').config({ path: './.env' });
+const PORT = process.env.PORT
 
 //set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
