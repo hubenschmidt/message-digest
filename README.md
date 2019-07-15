@@ -1,1 +1,1 @@
-# SHA-256-message-digest
+# message-digest
