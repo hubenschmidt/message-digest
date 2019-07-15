@@ -1,5 +1,5 @@
 const m = require('../models');
-const safe = require('./encryption')
+const safe = require('./hash')
 
 module.exports = {
     create: create,
@@ -8,7 +8,7 @@ module.exports = {
 
 function create(req, res) {
     let message = req.body.message;
-    let hash = safe.encrypt(message);
+    let hash = safe.hash(message);
     let signature = hash.substr(33, 81);
     let _id_transaction = hash.substr(0, 31);
 
