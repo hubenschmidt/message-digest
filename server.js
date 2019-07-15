@@ -24,7 +24,7 @@ app.use((req, res, next) => {
     next()
 })
 
-//connect to the Mongo DB
+//connect to MongoDB
 if (process.env.NODE_ENV === 'production'){
     mongoose.connect(process.env.MONGODB_URI);
 } else {
