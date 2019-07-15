@@ -25,18 +25,18 @@ app.use((req, res, next) => {
 })
 
 //connect to the Mongo DB
-// if (process.env.NODE_ENV === 'production'){
-//     mongoose.connect(process.env.PRODUCTION_DB_URL);
-// } else {
-//     mongoose.connect(process.env.PROVISIONAL_DB, {
-//         useNewUrlParser: true })
-//         .then(()=> console.log('MongoDB successfully connected'))
-//         .catch(err => console.log(err))
-// };
+if (process.env.NODE_ENV === 'production'){
+    mongoose.connect(process.env.PRODUCTION_DB_URL);
+} else {
+    mongoose.connect(process.env.PROVISIONAL_DB, {
+        useNewUrlParser: true })
+        .then((res)=> console.log('MongoDB successfully connected: '+ process.env.PROVISIONAL_DB))
+        .catch(err => console.log(err))
+};
 
 //start server
 app.listen(PORT, () =>
     console.log(`🌎 ==> API Server now listening on PORT ${PORT}!`)
 );
 
-console.log(process.env.NODE_ENV)
+// console.log(process.env.NODE_ENV)
