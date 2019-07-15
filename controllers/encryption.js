@@ -4,6 +4,7 @@ const crypto = require('crypto');
 require('dotenv').config();
 
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY
+console.log(ENCRYPTION_KEY)
 const IV_LENGTH = 16;
 
 module.exports = {
