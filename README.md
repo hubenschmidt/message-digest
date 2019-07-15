@@ -4,9 +4,9 @@
 https://belle-choucroute-16592.herokuapp.com/
 
 ## Description
-Message-digest is a cryptographic hash service which takes a string message and encrypts with one-way hashing. It is a RESTful service using Express server hosting API endpoints.
+Message-digest is a cryptographic hash service which takes a string message and coverts to SHA-256 hash. It is a RESTful service using Express server hosting API endpoints.
 
-The server stores encryption key in a safe place. Encrypts if '/message' route POST request contains a string in request body, then persists Initialization Vector:SHA-256 hash in MongoDB document.
+The server stores key in a safe place. Hashes if '/message' route POST request contains a string in request body, then persists Initialization Vector:SHA-256 hash in MongoDB document.
 * SHA-256 hash is assigned as _id
 * IV is saved onto an array of transactions as _id_t
 
@@ -32,7 +32,7 @@ GET:
 
 What would the bottlenecks be in your implementation as the number of request/second increases?
 
-* From the start, load/performance tests would be critical to identify performance issues as the service scaled. Possible issues could arise from the expense of the encryption algorithm, the need to authenitcate, authorize and validate the user and user-submitted data, network latency, the design of the database layer particularly with the use of virtual attributes, the optimization of the database queries, and server capacity. 
+* From the start, load/performance tests would be critical to identify performance issues as the service scaled. Possible issues could arise from the expense of the hash algorithm, the need to authenitcate, authorize and validate the user and user-submitted data, network latency, the design of the database layer particularly with the use of virtual attributes, the optimization of the database queries, and server capacity. 
 
 * Key performance indicators would include request/sec, latency, and request duration.  Runtime or infrastructure KPIs would include cpu time, memory usage, heap usage, and garbage collection.
 
