@@ -38,5 +38,3 @@ if (process.env.NODE_ENV === 'production'){
 app.listen(PORT, () =>
     console.log(`🌎 ==> API Server now listening on PORT ${PORT}!`)
 );
-
-// console.log(process.env.NODE_ENV)
