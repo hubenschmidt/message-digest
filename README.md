@@ -3,11 +3,6 @@
 ##
 message-digest is a cryptographic hash function containing a string of digits created by a one-way hashing formula.
 
-## performance question
-* What would the bottleneck(s) be in your implementation as number of requests/second increase?
-
-* How would you scale your microservice?
-
 ## demo
 https://belle-choucroute-16592.herokuapp.com/
 
@@ -19,4 +14,13 @@ curl https://belle-choucroute-16592.herokuapp.com/messages/9df6b026a8c6c26e3c3ac
 
 404:
 curl -i https://belle-choucroute-16592.herokuapp.com/messages/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+##
+
+
+## performance question
+* What would the bottleneck(s) be in your implementation as number of requests/second increase?
+
+* How would you scale your microservice?
 
