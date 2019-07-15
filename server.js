@@ -8,7 +8,7 @@ const PORT = process.env.PORT
 //set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 mongoose.set('useFindAndModify', false);
-
+require('dotenv').config();
 const app = express();
 
 //config bodyParser
@@ -25,14 +25,14 @@ app.use((req, res, next) => {
 })
 
 //connect to the Mongo DB
-if (process.env.NODE_ENV === 'production'){
-    mongoose.connect(process.env.PRODUCTION_DB_URL);
-} else {
-    mongoose.connect(process.env.PROVISIONAL_DB, {
-        useNewUrlParser: true })
-        .then(()=> console.log('MongoDB successfully connected'))
-        .catch(err => console.log(err))
-};
+// if (process.env.NODE_ENV === 'production'){
+//     mongoose.connect(process.env.PRODUCTION_DB_URL);
+// } else {
+//     mongoose.connect(process.env.PROVISIONAL_DB, {
+//         useNewUrlParser: true })
+//         .then(()=> console.log('MongoDB successfully connected'))
+//         .catch(err => console.log(err))
+// };
 
 //start server
 app.listen(PORT, () =>
