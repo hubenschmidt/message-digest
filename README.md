@@ -40,4 +40,4 @@ How would you scale your microservice?
 
 * As the service scaled, remedies for optimization vary based on business metrics but refactoring, caching, data optimization, and workload distribution.  For an Express-based microservice like this, a library like [Hydra-express](https://github.com/flywheelsports/hydra-express) offers tools for scaling microservices such as service discovery, message routing, load balance, presence, and health monitoring.
 
-* A number of areas to improve at scale would include protecting endpoints with JSON web tokens, a collision-management strategy for hashing, the optimization of the front- and back-end facing controllers to handle scaled request volume, and refactoring for a different design pattern for microservice architecture.
+* A number of areas to improve at current scale would include protecting endpoints with JSON web tokens, a collision-management strategy for hashing, the optimization of the front- and back-end facing controllers to handle scaled request volume, and refactoring for a different design pattern for microservice architecture.
