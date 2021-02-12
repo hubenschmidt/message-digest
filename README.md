@@ -27,15 +27,3 @@ GET:
 
 404:
 * `curl -i https://belle-choucroute-16592.herokuapp.com/messages/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
-
-## Performance Questions
-
-What would the bottlenecks be in your implementation as the number of request/second increases?
-
-* From the start, load/performance tests would be critical to identify performance issues as the service scaled. Possible issues could arise from the expense of the hash algorithm, the need to authenitcate, authorize and validate the user and user-submitted data, network latency, the design of the database layer particularly with the use of virtual attributes, the optimization of the database queries, and server capacity. 
-
-* Key performance indicators would include request/sec, latency, and request duration.  Runtime or infrastructure KPIs would include cpu time, memory usage, heap usage, and garbage collection.
-
-How would you scale your microservice?
-
-* As the service scaled, remedies for optimization vary based on business metrics and also include hashed sharding, refactoring, caching by least-recently used, and workload distribution across a horizontally distributed system.  For an Express-based microservice like this, a library like [Hydra-express](https://github.com/flywheelsports/hydra-express) offers tools for scaling microservices such as service discovery, message routing, load balance, presence, and health monitoring.
